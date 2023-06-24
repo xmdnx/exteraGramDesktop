@@ -7,6 +7,7 @@ https://github.com/telegramdesktop/tdesktop/blob/master/LEGAL
 */
 #include "core/application.h"
 
+#include "extera/extera_lang.h"
 #include "data/data_abstract_structure.h"
 #include "data/data_photo.h"
 #include "data/data_document.h"
@@ -249,6 +250,7 @@ void Application::run() {
 	_notifications = std::make_unique<Window::Notifications::System>();
 
 	startLocalStorage();
+	Extera::Lang::Load(Lang::GetInstance().baseId(), Lang::GetInstance().id());
 	ValidateScale();
 
 	refreshGlobalProxy(); // Depends on app settings being read.
