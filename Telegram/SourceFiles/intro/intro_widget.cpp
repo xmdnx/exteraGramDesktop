@@ -7,6 +7,7 @@ https://github.com/telegramdesktop/tdesktop/blob/master/LEGAL
 */
 #include "intro/intro_widget.h"
 
+#include "extera/extera_lang.h"
 #include "intro/intro_start.h"
 #include "intro/intro_phone.h"
 #include "intro/intro_qr.h"
@@ -259,6 +260,9 @@ void Widget::createLanguageLink() {
 		_changeLanguage->hide(anim::type::instant);
 		_changeLanguage->entity()->setClickedCallback([=] {
 			Lang::CurrentCloudManager().switchToLanguage(languageId);
+			Extera::Lang::Load(
+				Lang::GetInstance().baseId(), 
+				Lang::GetInstance().id());
 		});
 		_changeLanguage->toggle(
 			!_resetAccount && !_terms && _nextShown,
