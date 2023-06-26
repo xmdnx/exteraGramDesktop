@@ -458,8 +458,8 @@ MainMenu::MainMenu(
 	parentResized();
 
 	_telegram->setMarkedText(Ui::Text::Link(
-		u"Telegram Desktop"_q,
-		u"https://desktop.telegram.org"_q));
+		u"exteraGram Desktop"_q,
+		u"https://t.me/exteraGramDesktop"_q));
 	_telegram->setLinksTrusted();
 	_version->setMarkedText(
 		Ui::Text::Link(
