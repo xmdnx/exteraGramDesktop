@@ -15,7 +15,7 @@ https://github.com/xmdnx/exteraGramDesktop/blob/dev/LEGAL
 #include <QtCore/QJsonArray>
 #include <QtCore/QDir>
 
-namespace Extera {
+namespace ExteraLang {
 namespace Lang {
 namespace {
 
@@ -53,7 +53,7 @@ void ParseLanguageData(
 		return;
 	}
 	if (!file.open(QIODevice::ReadOnly)) {
-		LOG(("Extera::Lang Info: file %1 could not be read.").arg(filename));
+		LOG(("ExteraLang::Lang Info: file %1 could not be read.").arg(filename));
 		return;
 	}
 	auto error = QJsonParseError{ 0, QJsonParseError::NoError };
@@ -63,12 +63,12 @@ void ParseLanguageData(
 	file.close();
 
 	if (error.error != QJsonParseError::NoError) {
-		LOG(("Extera::Lang Info: file %1 has failed to parse. Error: %2"
+		LOG(("ExteraLang::Lang Info: file %1 has failed to parse. Error: %2"
 			).arg(filename
 			).arg(error.errorString()));
 		return;
 	} else if (!document.isObject()) {
-		LOG(("Extera::Lang Info: file %1 has failed to parse. Error: object expected"
+		LOG(("ExteraLang::Lang Info: file %1 has failed to parse. Error: object expected"
 			).arg(filename));
 		return;
 	}
@@ -106,7 +106,7 @@ void ParseLanguageData(
 				const auto pluralValue = keyPlurals.constFind(plural);
 
 				if (!(*pluralValue).isString()) {
-					LOG(("Extera::Lang Info: wrong value for key %1 in %2 in file %3, string expected")
+					LOG(("ExteraLang::Lang Info: wrong value for key %1 in %2 in file %3, string expected")
 						.arg(plural).arg(key).arg(filename));
 					continue;
 				}
@@ -117,7 +117,7 @@ void ParseLanguageData(
 				applyValue(name, translation);
 			}
 		} else {
-			LOG(("Extera::Lang Info: wrong value for key %1 in file %2, string or object expected")
+			LOG(("ExteraLang::Lang Info: wrong value for key %1 in file %2, string or object expected")
 				.arg(key).arg(filename));
 		}
 	}
@@ -291,4 +291,4 @@ rpl::producer<> Events() {
 }
 
 } // namespace Lang
-} // namespace Extera
+} // namespace ExteraLang

@@ -7,7 +7,7 @@ https://github.com/xmdnx/exteraGramDesktop/blob/dev/LEGAL
 */
 #pragma once
 
-namespace Extera {
+namespace ExteraLang {
 namespace Lang {
 
 struct Var {
@@ -65,102 +65,102 @@ TextWithEntities TranslateWithEntities(
 rpl::producer<> Events();
 
 } // namespace Lang
-} // namespace Extera
+} // namespace ExteraLang
 
 // Shorthands
 
 inline QString ktr(
 	const QString &key,
-	::Extera::Lang::Var var1 = ::Extera::Lang::Var(),
-	::Extera::Lang::Var var2 = ::Extera::Lang::Var(),
-	::Extera::Lang::Var var3 = ::Extera::Lang::Var(),
-	::Extera::Lang::Var var4 = ::Extera::Lang::Var()) {
-	return ::Extera::Lang::Translate(key, var1, var2, var3, var4);
+	::ExteraLang::Lang::Var var1 = ::ExteraLang::Lang::Var(),
+	::ExteraLang::Lang::Var var2 = ::ExteraLang::Lang::Var(),
+	::ExteraLang::Lang::Var var3 = ::ExteraLang::Lang::Var(),
+	::ExteraLang::Lang::Var var4 = ::ExteraLang::Lang::Var()) {
+	return ::ExteraLang::Lang::Translate(key, var1, var2, var3, var4);
 }
 
 inline QString ktr(
 	const QString &key,
 	float64 value,
-	::Extera::Lang::Var var1 = ::Extera::Lang::Var(),
-	::Extera::Lang::Var var2 = ::Extera::Lang::Var(),
-	::Extera::Lang::Var var3 = ::Extera::Lang::Var(),
-	::Extera::Lang::Var var4 = ::Extera::Lang::Var()) {
-	return ::Extera::Lang::Translate(key, value, var1, var2, var3, var4);
+	::ExteraLang::Lang::Var var1 = ::ExteraLang::Lang::Var(),
+	::ExteraLang::Lang::Var var2 = ::ExteraLang::Lang::Var(),
+	::ExteraLang::Lang::Var var3 = ::ExteraLang::Lang::Var(),
+	::ExteraLang::Lang::Var var4 = ::ExteraLang::Lang::Var()) {
+	return ::ExteraLang::Lang::Translate(key, value, var1, var2, var3, var4);
 }
 
 inline TextWithEntities ktre(
 	const QString &key,
-	::Extera::Lang::EntVar var1 = ::Extera::Lang::EntVar(),
-	::Extera::Lang::EntVar var2 = ::Extera::Lang::EntVar(),
-	::Extera::Lang::EntVar var3 = ::Extera::Lang::EntVar(),
-	::Extera::Lang::EntVar var4 = ::Extera::Lang::EntVar()) {
-	return ::Extera::Lang::TranslateWithEntities(key, var1, var2, var3, var4);
+	::ExteraLang::Lang::EntVar var1 = ::ExteraLang::Lang::EntVar(),
+	::ExteraLang::Lang::EntVar var2 = ::ExteraLang::Lang::EntVar(),
+	::ExteraLang::Lang::EntVar var3 = ::ExteraLang::Lang::EntVar(),
+	::ExteraLang::Lang::EntVar var4 = ::ExteraLang::Lang::EntVar()) {
+	return ::ExteraLang::Lang::TranslateWithEntities(key, var1, var2, var3, var4);
 }
 
 inline TextWithEntities ktre(
 	const QString &key,
 	float64 value,
-	::Extera::Lang::EntVar var1 = ::Extera::Lang::EntVar(),
-	::Extera::Lang::EntVar var2 = ::Extera::Lang::EntVar(),
-	::Extera::Lang::EntVar var3 = ::Extera::Lang::EntVar(),
-	::Extera::Lang::EntVar var4 = ::Extera::Lang::EntVar()) {
-	return ::Extera::Lang::TranslateWithEntities(key, value, var1, var2, var3, var4);
+	::ExteraLang::Lang::EntVar var1 = ::ExteraLang::Lang::EntVar(),
+	::ExteraLang::Lang::EntVar var2 = ::ExteraLang::Lang::EntVar(),
+	::ExteraLang::Lang::EntVar var3 = ::ExteraLang::Lang::EntVar(),
+	::ExteraLang::Lang::EntVar var4 = ::ExteraLang::Lang::EntVar()) {
+	return ::ExteraLang::Lang::TranslateWithEntities(key, value, var1, var2, var3, var4);
 }
 
 inline rpl::producer<QString> rktr(
 	const QString &key,
-	::Extera::Lang::Var var1 = ::Extera::Lang::Var(),
-	::Extera::Lang::Var var2 = ::Extera::Lang::Var(),
-	::Extera::Lang::Var var3 = ::Extera::Lang::Var(),
-	::Extera::Lang::Var var4 = ::Extera::Lang::Var()) {
+	::ExteraLang::Lang::Var var1 = ::ExteraLang::Lang::Var(),
+	::ExteraLang::Lang::Var var2 = ::ExteraLang::Lang::Var(),
+	::ExteraLang::Lang::Var var3 = ::ExteraLang::Lang::Var(),
+	::ExteraLang::Lang::Var var4 = ::ExteraLang::Lang::Var()) {
 	return rpl::single(
-			::Extera::Lang::Translate(key, var1, var2, var3, var4)
+			::ExteraLang::Lang::Translate(key, var1, var2, var3, var4)
 		) | rpl::then(
-			::Extera::Lang::Events() | rpl::map(
-				[=]{ return ::Extera::Lang::Translate(key, var1, var2, var3, var4); })
+			::ExteraLang::Lang::Events() | rpl::map(
+				[=]{ return ::ExteraLang::Lang::Translate(key, var1, var2, var3, var4); })
 		);
 }
 
 inline rpl::producer<QString> rktr(
 	const QString &key,
 	float64 value,
-	::Extera::Lang::Var var1 = ::Extera::Lang::Var(),
-	::Extera::Lang::Var var2 = ::Extera::Lang::Var(),
-	::Extera::Lang::Var var3 = ::Extera::Lang::Var(),
-	::Extera::Lang::Var var4 = ::Extera::Lang::Var()) {
+	::ExteraLang::Lang::Var var1 = ::ExteraLang::Lang::Var(),
+	::ExteraLang::Lang::Var var2 = ::ExteraLang::Lang::Var(),
+	::ExteraLang::Lang::Var var3 = ::ExteraLang::Lang::Var(),
+	::ExteraLang::Lang::Var var4 = ::ExteraLang::Lang::Var()) {
 	return rpl::single(
-			::Extera::Lang::Translate(key, value, var1, var2, var3, var4)
+			::ExteraLang::Lang::Translate(key, value, var1, var2, var3, var4)
 		) | rpl::then(
-			::Extera::Lang::Events() | rpl::map(
-				[=]{ return ::Extera::Lang::Translate(key, value, var1, var2, var3, var4); })
+			::ExteraLang::Lang::Events() | rpl::map(
+				[=]{ return ::ExteraLang::Lang::Translate(key, value, var1, var2, var3, var4); })
 		);
 }
 
 inline rpl::producer<TextWithEntities> rktre(
 	const QString &key,
-	::Extera::Lang::EntVar var1 = ::Extera::Lang::EntVar(),
-	::Extera::Lang::EntVar var2 = ::Extera::Lang::EntVar(),
-	::Extera::Lang::EntVar var3 = ::Extera::Lang::EntVar(),
-	::Extera::Lang::EntVar var4 = ::Extera::Lang::EntVar()) {
+	::ExteraLang::Lang::EntVar var1 = ::ExteraLang::Lang::EntVar(),
+	::ExteraLang::Lang::EntVar var2 = ::ExteraLang::Lang::EntVar(),
+	::ExteraLang::Lang::EntVar var3 = ::ExteraLang::Lang::EntVar(),
+	::ExteraLang::Lang::EntVar var4 = ::ExteraLang::Lang::EntVar()) {
 	return rpl::single(
-			::Extera::Lang::TranslateWithEntities(key, var1, var2, var3, var4)
+			::ExteraLang::Lang::TranslateWithEntities(key, var1, var2, var3, var4)
 		) | rpl::then(
-			::Extera::Lang::Events() | rpl::map(
-				[=]{ return ::Extera::Lang::TranslateWithEntities(key, var1, var2, var3, var4); })
+			::ExteraLang::Lang::Events() | rpl::map(
+				[=]{ return ::ExteraLang::Lang::TranslateWithEntities(key, var1, var2, var3, var4); })
 		);
 }
 
 inline rpl::producer<TextWithEntities> rktre(
 	const QString &key,
 	float64 value,
-	::Extera::Lang::EntVar var1 = ::Extera::Lang::EntVar(),
-	::Extera::Lang::EntVar var2 = ::Extera::Lang::EntVar(),
-	::Extera::Lang::EntVar var3 = ::Extera::Lang::EntVar(),
-	::Extera::Lang::EntVar var4 = ::Extera::Lang::EntVar()) {
+	::ExteraLang::Lang::EntVar var1 = ::ExteraLang::Lang::EntVar(),
+	::ExteraLang::Lang::EntVar var2 = ::ExteraLang::Lang::EntVar(),
+	::ExteraLang::Lang::EntVar var3 = ::ExteraLang::Lang::EntVar(),
+	::ExteraLang::Lang::EntVar var4 = ::ExteraLang::Lang::EntVar()) {
 	return rpl::single(
-			::Extera::Lang::TranslateWithEntities(key, value, var1, var2, var3, var4)
+			::ExteraLang::Lang::TranslateWithEntities(key, value, var1, var2, var3, var4)
 		) | rpl::then(
-			::Extera::Lang::Events() | rpl::map(
-				[=]{ return ::Extera::Lang::TranslateWithEntities(key, value, var1, var2, var3, var4); })
+			::ExteraLang::Lang::Events() | rpl::map(
+				[=]{ return ::ExteraLang::Lang::TranslateWithEntities(key, value, var1, var2, var3, var4); })
 		);
 }

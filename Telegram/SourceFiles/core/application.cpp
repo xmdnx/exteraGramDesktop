@@ -250,7 +250,7 @@ void Application::run() {
 	_notifications = std::make_unique<Window::Notifications::System>();
 
 	startLocalStorage();
-	Extera::Lang::Load(Lang::GetInstance().baseId(), Lang::GetInstance().id());
+	ExteraLang::Lang::Load(Lang::GetInstance().baseId(), Lang::GetInstance().id());
 	ValidateScale();
 
 	refreshGlobalProxy(); // Depends on app settings being read.

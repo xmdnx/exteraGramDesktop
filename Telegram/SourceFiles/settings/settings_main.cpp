@@ -7,6 +7,8 @@ https://github.com/xmdnx/exteraGramDesktop/blob/dev/LEGAL
 */
 #include "settings/settings_main.h"
 
+#include "extera/extera_settings_menu.h"
+#include "extera/extera_lang.h"
 #include "settings/settings_common.h"
 #include "settings/settings_codes.h"
 #include "settings/settings_chat.h"
@@ -317,6 +319,10 @@ void SetupSections(
 			showOther(type);
 		});
 	};
+	addSection(
+		rktr("etg_settings_extera"),
+		Extera::Id(),
+		{ &st::settingsIconExtera, kIconRed });
 	if (controller->session().supportMode()) {
 		SetupSupport(controller, container);
 

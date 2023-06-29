@@ -213,7 +213,7 @@ bool Widget::floatPlayerHandleWheelEvent(QEvent *e) {
 
 void Widget::refreshLang() {
 	_changeLanguage.destroy();
-	Extera::Lang::Load(
+	ExteraLang::Lang::Load(
 		Lang::GetInstance().baseId(), 
 		Lang::GetInstance().id());
 	createLanguageLink();
@@ -263,7 +263,7 @@ void Widget::createLanguageLink() {
 		_changeLanguage->hide(anim::type::instant);
 		_changeLanguage->entity()->setClickedCallback([=] {
 			Lang::CurrentCloudManager().switchToLanguage(languageId);
-			/* Extera::Lang::Load(
+			/* ExteraLang::Lang::Load(
 				Lang::GetInstance().baseId(), 
 				Lang::GetInstance().id()); */
 		});
