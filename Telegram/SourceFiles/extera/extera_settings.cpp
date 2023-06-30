@@ -232,9 +232,13 @@ const std::map<QString, Definition, std::greater<QString>> DefinitionMap {
 		.defaultValue = false, }},
 
 	// Stored settings
-	{ "adaptive_bubbles", {
+	{ "sticker_height", {
+		.type = SettingType::IntSetting,
+		.defaultValue = 170,
+		.limitHandler = IntLimit(64, 256, 170), }},
+	{ "sticker_scale_both", {
 		.type = SettingType::BoolSetting,
-		.defaultValue = false, }},
+		.defaultValue = true, }},
 };
 
 using OldOptionKey = QString;

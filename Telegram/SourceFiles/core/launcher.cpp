@@ -7,6 +7,7 @@ https://github.com/xmdnx/exteraGramDesktop/blob/dev/LEGAL
 */
 #include "core/launcher.h"
 
+#include "extera/extera_settings.h"
 #include "platform/platform_launcher.h"
 #include "platform/platform_specific.h"
 #include "base/options.h"
@@ -339,6 +340,7 @@ void Launcher::initHighDpi() {
 }
 
 int Launcher::exec() {
+	ExteraSettings::JsonSettings::Start();
 	init();
 
 	if (cLaunchMode() == LaunchModeFixPrevious) {
