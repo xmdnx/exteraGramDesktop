@@ -7,6 +7,7 @@ https://github.com/xmdnx/exteraGramDesktop/blob/dev/LEGAL
 */
 #include "history/history_widget.h"
 
+#include "extera/extera_settings.h"
 #include "api/api_editing.h"
 #include "api/api_bot.h"
 #include "api/api_chat_participants.h"
@@ -567,6 +568,22 @@ HistoryWidget::HistoryWidget(
 	}, lifetime());
 
 	Core::App().settings().largeEmojiChanges(
+	) | rpl::start_with_next([=] {
+		crl::on_main(this, [=] {
+			updateHistoryGeometry();
+		});
+	}, lifetime());
+
+	::ExteraSettings::JsonSettings::Events(
+		"sticker_height"
+	) | rpl::start_with_next([=] {
+		crl::on_main(this, [=] {
+			updateHistoryGeometry();
+		});
+	}, lifetime());
+
+	::ExteraSettings::JsonSettings::Events(
+		"sticker_scale_both"
 	) | rpl::start_with_next([=] {
 		crl::on_main(this, [=] {
 			updateHistoryGeometry();
