@@ -1,11 +1,11 @@
 [Desktop Entry]
-Name=Telegram Desktop
-Comment=Official desktop version of Telegram messaging app
-TryExec=telegram-desktop
-Exec=telegram-desktop -- %u
-Icon=telegram
+Name=exteraGram Desktop
+Comment=Unofficial desktop version of Telegram messaging app
+TryExec=extera-desktop
+Exec=extera-desktop -- %u
+Icon=exteragram
 Terminal=false
-StartupWMClass=TelegramDesktop
+StartupWMClass=exteraGramDesktop
 Type=Application
 Categories=Chat;Network;InstantMessaging;Qt;
 MimeType=x-scheme-handler/tg;
@@ -16,6 +16,6 @@ X-GNOME-UsesNotifications=true
 X-GNOME-SingleWindow=true
 
 [Desktop Action quit]
-Exec=telegram-desktop -quit
-Name=Quit Telegram
+Exec=exteraGram-desktop -quit
+Name=Quit exteraGram
 Icon=application-exit
