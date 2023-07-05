@@ -7,6 +7,7 @@ https://github.com/xmdnx/exteraGramDesktop/blob/dev/LEGAL
 */
 #include "tray.h"
 
+#include "extera/extera_lang.h"
 #include "core/application.h"
 #include "core/core_settings.h"
 #include "platform/platform_specific.h"
@@ -67,7 +68,7 @@ void Tray::rebuildMenu() {
 			_activeForTrayIconAction = Core::App().isActiveForTrayMenu();
 			return _activeForTrayIconAction
 				? tr::lng_minimize_to_tray(tr::now)
-				: tr::lng_open_from_tray(tr::now);
+				: ktr("etg_open_from_tray");
 		});
 
 		_tray.addAction(
@@ -88,7 +89,7 @@ void Tray::rebuildMenu() {
 			[=] { toggleSoundNotifications(); });
 	}
 
-	_tray.addAction(tr::lng_quit_from_tray(), [] { Core::Quit(); });
+	_tray.addAction(rktr("etg_quit_from_tray"), [] { Core::Quit(); });
 
 	updateMenuText();
 }

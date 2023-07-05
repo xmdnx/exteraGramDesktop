@@ -7,6 +7,7 @@ https://github.com/xmdnx/exteraGramDesktop/blob/dev/LEGAL
 */
 #include "mainwindow.h"
 
+#include "extera/extera_lang.h"
 #include "data/data_document.h"
 #include "data/data_session.h"
 #include "data/data_document_media.h"
