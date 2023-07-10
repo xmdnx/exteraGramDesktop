@@ -2,7 +2,7 @@
 
 This is the complete source code and the build instructions for the app based on the official [Telegram][telegram] messenger desktop client.
 
-![image](https://github.com/xmdnx/exteraGramDesktop/assets/72883689/5cabc63a-2906-4f47-a65a-98b02f16c284)
+![image](https://github.com/xmdnx/exteraGramDesktop/assets/72883689/082fe7d6-eeba-4198-83ab-843d08ac909c)
 
 The source code is published under GPLv3 with OpenSSL exception, the license is available [here][license].
 
